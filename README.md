@@ -5,9 +5,9 @@
 
 Quiz app, counting the wrong and correct answers and store this in localStorage. In the finish, show a report with all questions and answer chosen.
 
-## Questions
+## API Endpoint
 
-The questions can be found in this endpoint: ```https://opentdb.com/api.php?amount=QUANTITY```.
+The questions can be viewed in this endpoint: ```https://opentdb.com/api.php?amount=QUANTITY```.
 
 ## Techs
 

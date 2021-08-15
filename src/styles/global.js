@@ -35,11 +35,10 @@ export const Container = styled.div`
   height: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
 
   @media(max-width: 768px) {
     max-width: 100%;
-    padding: 1rem;
   }
 `;
 
@@ -54,6 +53,21 @@ export const Typography = styled.p`
     }
   `};
 `;
+
+export const PrimaryButton = styled.button`
+  color: ${props => props.theme.colors.text};
+  outline: none;
+  background: none;
+  border: 2px solid #bd93f9;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: #bd93f9;
+  }
+`
 
 export const Heading = styled('h1').attrs(({ level }) => ({
   as: `h${level}`

@@ -5,13 +5,18 @@
 
 Quiz app, counting the wrong and correct answers and store this in localStorage. In the finish, show a report with all questions and answer chosen.
 
+## What i expect learn?
+  - Styled Components;
+  - React Router DOM;
+  - Context API;
+  - useRef Hook;
 ## API Endpoint
 
 The questions can be viewed in this endpoint: ```https://opentdb.com/api.php?amount=QUANTITY```.
 
 ## Techs
 
-This project was developed with ReactJS. Techs used: Material UI, Styled Components and Axios.
+This project was developed with ReactJS. Techs used: React Router DOM, Styled Components and Axios.
 
 ## Commits Pattern
 

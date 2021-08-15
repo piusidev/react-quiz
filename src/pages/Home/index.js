@@ -1,10 +1,9 @@
+import { useRef } from "react";
 import { Container, Heading, PrimaryButton, Typography } from "../../styles/global";
 import { ButtonsContainer, Homepage, Wrapper } from "./styles";
 import Option from "../../components/Option";
-import { useRef } from "react";
 
 const Home = () => {
-
   const quantityRef = useRef({});
   const difficultyRef = useRef({});
 

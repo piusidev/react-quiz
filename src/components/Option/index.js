@@ -1,12 +1,15 @@
+import { forwardRef } from "react";
 import { StyledOption } from "./styles";
 
-const Option = ({ text, value, name }) => {
+const Option = forwardRef((props, ref) => {
+  const { text, value, name } = props;
+
   return(
     <StyledOption>
-      <input type="radio" value={value} name={name} />
+      <input ref={ref} type="radio" value={value} name={name} />
       <span>{text}</span>
     </StyledOption>
   )
-}
+})
 
 export default Option;

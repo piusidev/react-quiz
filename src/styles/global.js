@@ -43,13 +43,13 @@ export const Container = styled.div`
 `;
 
 export const Typography = styled.p`
-  ${({ size = 22, weight, align = 'left' }) => css`
-    font-size: ${size}px;
+  ${({ size = 1.5, weight, align = 'left' }) => css`
+    font-size: ${size}rem;
     font-weight: ${weight};
     text-align: ${align};
 
     @media (max-width: 768px) {
-      font-size: 18px;
+      font-size: 1rem;
     }
   `};
 `;
@@ -64,21 +64,23 @@ export const PrimaryButton = styled.button`
   transition: all 0.3s ease;
   cursor: pointer;
 
+  font-size: 1rem;
+
   &:hover {
     background: #bd93f9;
   }
-`
+`;
 
 export const Heading = styled('h1').attrs(({ level }) => ({
   as: `h${level}`
 }))`
   ${({ size, weight, align = 'left' }) => css`
-    font-size: ${size}px;
+    font-size: ${size}rem;
     font-weight: ${weight};
     text-align: ${align};
 
     @media (max-width: 768px) {
-      font-size: 24px;
+      font-size: 1.8rem;
     }
   `};
 `;

@@ -1,6 +1,8 @@
 <h1 align="center">React Quiz 🎯</h1>
 <h2 align="center">🚧 Under development 🚧</h2>
 
+![App Screenshot](public/images/docs/quiz.png)
+
 ## Objective
 
 Quiz app, counting the wrong and correct answers and store this in localStorage. In the finish, show a report with all questions and answer chosen.

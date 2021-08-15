@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const Questions = (amount) => {
-  const url = `https://opentdb.com/api.php?amount=${amount}`;
+const Api = async (amount, difficulty) => {
+  const url = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}`;
   let questions = null;
 
-  axios({
+  await axios({
     method: 'get',
     url: url,
   })
@@ -12,7 +12,7 @@ const Questions = (amount) => {
     questions = response.data;
   })
 
-  return questions;
+  return questions.results;
 }
 
-export default Questions
+export default Api

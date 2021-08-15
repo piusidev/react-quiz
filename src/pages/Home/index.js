@@ -1,13 +1,16 @@
-import { useContext, useEffect, useRef } from "react";
-import { Container, Heading, PrimaryButton, Typography } from "../../styles/global";
-import { ButtonsContainer, Homepage, Wrapper } from "./styles";
-import Option from "../../components/Option";
+import { useContext, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { GameContext } from "../../contexts/Game";
 
+import Option from "../../components/Option";
+import { Container, Heading, PrimaryButton, Typography } from "../../styles/global";
+import { ButtonsContainer, Homepage, Wrapper } from "./styles";
+
 const Home = () => {
-  const { config } = useContext(GameContext);
+  const { config, getQuestions } = useContext(GameContext);
   const quantityRef = useRef({});
   const difficultyRef = useRef({});
+  const history = useHistory();
 
   const startGame = () => {
     let quantity = quantityRef.current;
@@ -27,6 +30,9 @@ const Home = () => {
 
     config.quantity = quantity;
     config.difficulty = difficulty;
+
+    getQuestions(config.quantity, config.difficulty);
+    history.push('/quizz');
   }
 
   return(

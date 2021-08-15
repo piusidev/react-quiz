@@ -1,9 +1,11 @@
-import { useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Container, Heading, PrimaryButton, Typography } from "../../styles/global";
 import { ButtonsContainer, Homepage, Wrapper } from "./styles";
 import Option from "../../components/Option";
+import { GameContext } from "../../contexts/Game";
 
 const Home = () => {
+  const { config } = useContext(GameContext);
   const quantityRef = useRef({});
   const difficultyRef = useRef({});
 
@@ -22,6 +24,9 @@ const Home = () => {
         difficulty = value.value;
       }
     });
+
+    config.quantity = quantity;
+    config.difficulty = difficulty;
   }
 
   return(
@@ -63,6 +68,6 @@ const Home = () => {
       </Container>
     </div>
   )
-}
+};
 
 export default Home;

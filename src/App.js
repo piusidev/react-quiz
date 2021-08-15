@@ -15,6 +15,7 @@ import dark from "./styles/themes/dark";
 
 import { GlobalStyle } from './styles/global'
 import Header from "./components/Header";
+import { GameProvider } from './contexts/Game';
 
 const App = () => {
   const [theme, setTheme] = useState(dark);
@@ -25,18 +26,20 @@ const App = () => {
 
   return (
     <Router>
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <GlobalStyle />
-          <Header toggleTheme={toggleTheme} />
+      <GameProvider>
+        <ThemeProvider theme={theme}>
+          <div className="App">
+            <GlobalStyle />
+            <Header toggleTheme={toggleTheme} />
 
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/quizz" component={Quizz} />
-            <Route path="/report" component={Report} />
-          </Switch>
-        </div>
-      </ThemeProvider>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/quizz" component={Quizz} />
+              <Route path="/report" component={Report} />
+            </Switch>
+          </div>
+        </ThemeProvider>
+      </GameProvider>
     </Router>
   );
 }

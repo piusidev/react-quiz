@@ -12,9 +12,12 @@ export const Navbar = styled.nav`
 `
 
 export const Logo = styled.div`
-  color: #fff;
-  display: flex;
-  align-items: center;
+  a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
 
   h1 {
     font-size: 36px;

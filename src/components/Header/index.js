@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Logo, Navbar, ThemeSwitcher } from "./styles";
 
 const Header = ({ toggleTheme }) => {
@@ -12,8 +13,10 @@ const Header = ({ toggleTheme }) => {
   return(
     <Navbar>
       <Logo>
-        <h1>QUIZZ</h1>
-        <img src="/icon.svg" alt="Logo"/>
+        <Link to='/'>
+          <h1>QUIZZ</h1>
+          <img src="/icon.svg" alt="Logo"/>
+        </Link>
       </Logo>
       <ThemeSwitcher onClick={() => {changeTheme()}}>
         {

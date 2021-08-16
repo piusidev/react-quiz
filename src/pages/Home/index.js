@@ -7,7 +7,7 @@ import { Container, Heading, PrimaryButton, Typography } from "../../styles/glob
 import { ButtonsContainer, Homepage, Wrapper } from "./styles";
 
 const Home = () => {
-  const { config, getQuestions } = useContext(GameContext);
+  const { config } = useContext(GameContext);
   const quantityRef = useRef({});
   const difficultyRef = useRef({});
   const history = useHistory();
@@ -31,10 +31,8 @@ const Home = () => {
     config.quantity = quantity;
     config.difficulty = difficulty;
 
-    getQuestions(config.quantity, config.difficulty);
     history.push('/quizz');
   }
-
   return(
     <div>
       <Container>

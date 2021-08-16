@@ -9,19 +9,15 @@ export const GameProvider = (props) => {
     difficulty: ''
   }
 
-  const questions = {
+  const result = {
     wrong: 0,
     right: 0
   }
 
-  const getQuestions = async (quantity, difficulty) => {
-    const teste = await Api(quantity, difficulty);
-
-    console.log(teste);
-  }
+  let questions = [];
 
   return(
-    <GameContext.Provider value={{ config, questions, getQuestions }} >
+    <GameContext.Provider value={{ config, result, questions }} >
       {props.children}
     </GameContext.Provider>
   )

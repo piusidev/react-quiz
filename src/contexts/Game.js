@@ -1,5 +1,4 @@
 import { createContext } from "react";
-import Api from "../services/api";
 
 export const GameContext = createContext({});
 

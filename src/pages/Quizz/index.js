@@ -16,7 +16,7 @@ const Quizz = () => {
     setLoading(false);
   }
 
-  useEffect(async() => {
+  useEffect(() => {
     getQuestions();
   }, []);
   

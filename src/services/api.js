@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const Api = async (amount, difficulty) => {
+const Api = async (amount, difficulty, callback) => {
   if (!amount || !difficulty) {
     return
   }
@@ -14,6 +14,10 @@ const Api = async (amount, difficulty) => {
   })
   .then(response => {
     questions = response.data
+
+    if (callback) {
+      callback()
+    }
   })
 
   return questions.results

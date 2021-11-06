@@ -1,20 +1,23 @@
 import { useContext, useEffect, useState } from "react"
 
 import Api from "../../services/api"
+
+import { getDataFromUrl } from "../../utils"
+
 import { GameContext } from "../../contexts/Game"
 import { Question } from "./styles"
 import { Container } from "../../styles/global"
 
 const Quizz = () => {
-  const { config } = useContext(GameContext)
-  let { questions } = useContext(GameContext)
   const [loading, setLoading] = useState(true)
+  const { config } = useContext(GameContext)
 
   const getQuestions = async () => {
-    const response = await Api(config.quantity, config.difficulty);
-    questions = [...response];
-    console.log(questions)
-    setLoading(false)
+    const params = ['quantity', 'difficulty']
+    const data = config.quantity || config.difficulty ? config : getDataFromUrl(params)
+    const response = await Api(data.quantity, data.difficulty, setLoading(false))
+
+    return response
   }
 
   useEffect(() => {
@@ -31,7 +34,7 @@ const Quizz = () => {
             <section>
               <div>
                 {
-                  console.log(questions)
+                  console.log()
                 }
               </div>
               <div>

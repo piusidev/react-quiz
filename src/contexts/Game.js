@@ -3,16 +3,8 @@ import { createContext } from "react";
 export const GameContext = createContext({});
 
 export const GameProvider = (props) => {
-  const config = {
-    quantity: '',
-    difficulty: ''
-  }
-
-  const result = {
-    wrong: 0,
-    right: 0
-  }
-
+  const config = {}
+  const result = {}
   let questions = [];
 
   return(

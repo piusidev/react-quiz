@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const Question = styled.div`
-  min-height: 80vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+
+  border-radius: 0.5rem;
+  border: 0.3rem solid ${props => props.theme.colors.primary};
+  padding: 1rem;
 
   section {
     margin: 3rem 0;

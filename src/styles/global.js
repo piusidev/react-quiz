@@ -32,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
+  min-height: calc(100vh - 80px);
   height: 100%;
   max-width: 1100px;
   margin: 0 auto;

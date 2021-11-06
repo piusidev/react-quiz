@@ -1,38 +1,39 @@
-import { useContext, useRef } from "react";
-import { useHistory } from "react-router-dom";
-import { GameContext } from "../../contexts/Game";
+import { useContext, useRef } from "react"
+import { useHistory } from "react-router-dom"
+import { GameContext } from "../../contexts/Game"
 
-import Option from "../../components/Option";
-import { Container, Heading, PrimaryButton, Typography } from "../../styles/global";
-import { ButtonsContainer, Homepage, Wrapper } from "./styles";
+import Option from "../../components/Option"
+import { Container, Heading, PrimaryButton, Typography } from "../../styles/global"
+import { ButtonsContainer, Homepage, Wrapper } from "./styles"
 
 const Home = () => {
-  const { config } = useContext(GameContext);
-  const quantityRef = useRef({});
-  const difficultyRef = useRef({});
-  const history = useHistory();
+  const { config } = useContext(GameContext)
+  const quantityRef = useRef({})
+  const difficultyRef = useRef({})
+  const history = useHistory()
 
   const startGame = () => {
-    let quantity = quantityRef.current;
-    let difficulty = difficultyRef.current;
+    let quantity = quantityRef.current
+    let difficulty = difficultyRef.current
 
-    Object.entries(quantity).forEach(([key, value]) => {
+    Object.entries(quantity).map(([key, value]) => {
       if(value.checked === true) {
-        quantity = value.value;
+        quantity = value.value
       }
-    });
+    })
 
-    Object.entries(difficulty).forEach(([key, value]) => {
+    Object.entries(difficulty).map(([key, value]) => {
       if(value.checked === true) {
-        difficulty = value.value;
+        difficulty = value.value
       }
-    });
+    })
 
-    config.quantity = quantity;
-    config.difficulty = difficulty;
+    config.quantity = quantity
+    config.difficulty = difficulty
 
-    history.push('/quizz');
+    history.push('/quizz')
   }
+  
   return(
     <div>
       <Container>
@@ -72,6 +73,6 @@ const Home = () => {
       </Container>
     </div>
   )
-};
+}
 
-export default Home;
+export default Home

@@ -1,24 +1,25 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { GameContext } from "../../contexts/Game";
-import Api from "../../services/api";
-import { Question } from "./styles";
-import { Container, Heading, PrimaryButton, Typography } from "../../styles/global";
+import { useContext, useEffect, useState } from "react"
+
+import Api from "../../services/api"
+import { GameContext } from "../../contexts/Game"
+import { Question } from "./styles"
+import { Container } from "../../styles/global"
 
 const Quizz = () => {
-  const { config } = useContext(GameContext);
-  let { questions } = useContext(GameContext);
-  const [loading, setLoading] = useState(true);
+  const { config } = useContext(GameContext)
+  let { questions } = useContext(GameContext)
+  const [loading, setLoading] = useState(true)
 
   const getQuestions = async () => {
     const response = await Api(config.quantity, config.difficulty);
     questions = [...response];
     console.log(questions)
-    setLoading(false);
+    setLoading(false)
   }
 
   useEffect(() => {
-    getQuestions();
-  }, []);
+    getQuestions()
+  }, [])
   
   return(
     <Container>
@@ -44,4 +45,4 @@ const Quizz = () => {
   )
 }
 
-export default Quizz;
+export default Quizz

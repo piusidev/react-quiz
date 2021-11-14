@@ -1,4 +1,5 @@
-export const getDataFromUrl = (data) => {
+export const getDataFromUrl = () => {
+  const data = ['quantity', 'difficulty']
   const url = new URL(window.location.href)
   const params = new URLSearchParams(url.search)
   const value = {}
